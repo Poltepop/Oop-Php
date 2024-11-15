@@ -12,4 +12,6 @@
     $Company->programmer->say();
 
     sayHello(new Programmer("eko"));
+    sayHello(new BackendProgrammer("eko"));
+    sayHello(new FrontendProgrammer("eko"));
     ?>

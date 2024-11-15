@@ -27,7 +27,12 @@
     }
 
     function sayHello(Programmer $programmer){
-        echo "hello Programmer $programmer->name" .PHP_EOL;
-        echo "$programmer->age y.o" .PHP_EOL;
+        if($programmer instanceof BackendProgrammer){
+            echo "hello Backend Programmer $programmer->name" .PHP_EOL;
+        }elseif($programmer instanceof FrontendProgrammer){
+            echo "hello FrontEnd Programmer $programmer->name" .PHP_EOL;
+        }elseif($programmer instanceof Programmer){
+            echo "hello Programmer $programmer->name" .PHP_EOL;
+        }
     }
 ?>
