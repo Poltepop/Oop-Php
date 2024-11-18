@@ -10,11 +10,11 @@
                 return $this->name .PHP_EOL;
         }
 
-        public function setName($name)
+        public function setName($name): void
         {
-                $this->name = $name;
-
-                return $this;
+                if(trim($name) != ""){
+                    $this->name = $name;
+                }
         }
 
         

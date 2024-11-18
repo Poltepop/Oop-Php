@@ -5,6 +5,7 @@
 
     $category = new Category();
     $category->setName("Mangga");
+    $category->setName("");
     echo $category->getName();
 
     $category->setExpensive(TRUE);
