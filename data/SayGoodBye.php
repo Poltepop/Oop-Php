@@ -56,7 +56,11 @@ class ParentPerson {
 }
 
 class Person extends ParentPerson{
-    use SayHello,SayGoodBye,HasName,CanRun;
+    // override visiblity
+    use SayHello,SayGoodBye,HasName,CanRun{
+        hello as public;
+        Goodbye as public;
+    }
 
     public function run(): void
     {
