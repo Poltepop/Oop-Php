@@ -7,8 +7,9 @@
     $person->Hello("");
     $person->GoodBye("eko");
 
-    $person->name = "joko";
     var_dump($person);
     $person->age;
 
+    $person->run();
+    $person->name = "joko";
 ?>

@@ -32,10 +32,47 @@ trait SayHello{
 }
 
 trait HasName{
-    public string $name;
+    public string $name = "";
 }
 
-class Person{
-    use SayHello,SayGoodBye,HasName;
+trait CanRun{
+    public abstract function run(): void;
+}
+
+
+
+class ParentPerson {
+
+    // jika kita membuat function yang sama di parent class dan di trait maka parent class akan ter override oleh trait
+    public function GoodBye(?string $name)
+    {
+        echo "Good bye in person" . PHP_EOL;
+    }
+
+    public function Hello(?string $name)
+    {
+        echo "hello in person" . PHP_EOL;    
+    }
+}
+
+class Person extends ParentPerson{
+    use SayHello,SayGoodBye,HasName,CanRun;
+
+    public function run(): void
+    {
+        echo  "Person {$this->name} is running". PHP_EOL;
+    }
+
+
+    // jika kita overide di child class maka trait akan ter override
+    // public function GoodBye()
+    // {
+    //     echo "Good bye in person" . PHP_EOL;
+    // }
+
+    // public function Hello(): void
+    // {
+    //     echo "hello in person" . PHP_EOL;    
+    // }
 }
 ?>
