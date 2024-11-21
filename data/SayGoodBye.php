@@ -17,6 +17,8 @@ trait SayGoodBye{
 
 trait SayHello{
 
+    // public string $name;
+
     public int $age = 10;
 
     public function Hello(?string $name): void
@@ -29,7 +31,11 @@ trait SayHello{
     }
 }
 
+trait HasName{
+    public string $name;
+}
+
 class Person{
-    use SayHello,SayGoodBye;
+    use SayHello,SayGoodBye,HasName;
 }
 ?>
