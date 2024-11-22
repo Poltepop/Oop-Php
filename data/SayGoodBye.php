@@ -55,7 +55,8 @@ class ParentPerson {
     }
 }
 
-class Person extends ParentPerson{
+//trait inheritance
+trait all {
     // override visiblity
     use SayHello,SayGoodBye,HasName,CanRun{
         hello as public;
@@ -66,6 +67,11 @@ class Person extends ParentPerson{
     {
         echo  "Person {$this->name} is running". PHP_EOL;
     }
+}
+
+class Person extends ParentPerson{
+    // override visiblity
+    use all;
 
 
     // jika kita overide di child class maka trait akan ter override
