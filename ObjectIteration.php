@@ -7,6 +7,16 @@ class Data implements IteratorAggregate{
     protected string $third = "ketiga";
     private string $forth = "keempat";
 
+    //use yield operator 
+    public function yieldTest(){
+        yield "first" => $this->first;
+        yield "second" => $this->second;
+        yield "third" => $this->third;
+        yield "forth" => $this->forth;
+    }
+
+
+    // use array iterator
     public function getIterator(): Traversable
     {
         $array = [
@@ -21,7 +31,10 @@ class Data implements IteratorAggregate{
 }
 
 $data = new Data();
+foreach ($data->yieldTest() as $property => $value){
+    echo "$property : $value" .PHP_EOL;
+}
 
-foreach($data as $property => $value){
+foreach($data->getIterator() as $property => $value){
     echo "$property : $value" .PHP_EOL;
 }
