@@ -13,5 +13,7 @@ $student1->getSample("xxx");
 var_dump($student1);
 //clone
 $student2 = clone $student1;
+$student2->__clone();
 var_dump($student2);
+
 ?>
