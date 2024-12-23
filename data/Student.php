@@ -28,4 +28,17 @@ class Student{
         $join = join(",", $arguments);
         echo "Invove Student With Arguments $join";
     }
+
+    public function __debugInfo()
+    {
+        return [
+            "id" => $this->id,
+            "name" => $this->nama,
+            "value" => $this->value,
+            "sample" => $this->sample,
+            "author" => "poltepop",
+            "version" => "1.0.00"
+
+        ];
+    }
 }
