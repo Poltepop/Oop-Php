@@ -1,2 +1,2 @@
-oop(Object Oriented Programin) Php 
+oop(Object Oriented Programing) Php 
 sc: @ProgrammerZamanNow
