@@ -22,6 +22,18 @@ class Zero{
     {
         unset($this->properties[$name]);  
     }
+
+    public function __call($name,$arguments)
+    {
+        $join = join(",",$arguments);
+        echo "call Function $name with arguments $join" .PHP_EOL;
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        $join = join(",",$arguments);
+        echo "call Static Function $name with arguments $join" .PHP_EOL;
+    }
 }
 
 $zero = new Zero();
@@ -31,5 +43,8 @@ $zero->lastName = "Kurniawan";
 
 echo "firstName : $zero->firstName" .PHP_EOL;
 echo isset($zero->firstName);
+
+$zero->sayHell("eko","khannedy","kurniawan");
+$zero::SayBinatang("Kucing","anjing","babi");
 
 
